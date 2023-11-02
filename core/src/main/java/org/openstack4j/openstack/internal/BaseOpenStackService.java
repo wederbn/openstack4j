@@ -228,10 +228,12 @@ public class BaseOpenStackService {
             header(HEADER_USER_AGENT, USER_AGENT);
             HttpRequest<R> request = req.build();
             System.out.println("Sending request....");
-            System.out.println(request);
+            System.out.println(request.toString());
             HttpResponse res = HttpExecutor.create().execute(request);
             System.out.println("Received result....");
-            System.out.println(res);
+            System.out.println(res.toString());
+            System.out.println("Status: " + res.getStatus());
+            System.out.println("Status message: " + res.getStatusMessage());
 
             reqIdContainer.remove();
             reqIdContainer.set(getRequestId(res));
