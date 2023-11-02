@@ -227,7 +227,11 @@ public class BaseOpenStackService {
         public R execute(ExecutionOptions<R> options) {
             header(HEADER_USER_AGENT, USER_AGENT);
             HttpRequest<R> request = req.build();
+            System.out.println("Sending request....");
+            System.out.println(request);
             HttpResponse res = HttpExecutor.create().execute(request);
+            System.out.println("Received result....");
+            System.out.println(res);
 
             reqIdContainer.remove();
             reqIdContainer.set(getRequestId(res));
