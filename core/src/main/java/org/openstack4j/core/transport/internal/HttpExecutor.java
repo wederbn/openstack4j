@@ -50,7 +50,7 @@ public class HttpExecutor {
     public <R> HttpResponse execute(HttpRequest<R> request) {
 
         LOG.debug("Executing Request: {} {}", request.getMethod(), request.getUrl());
-        System.out.println("Executing Request:" + request.getMethod().toString() +  request.getUrl() + request.getEntity().toString());
+        System.out.println("Executing Request:" + request.getUrl());
         System.out.println(request.getJson());
         try {
             return service().execute(request);
