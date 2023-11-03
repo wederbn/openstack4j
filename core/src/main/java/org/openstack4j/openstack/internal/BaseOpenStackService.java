@@ -234,6 +234,7 @@ public class BaseOpenStackService {
             System.out.println(res.toString());
             System.out.println("Status: " + res.getStatus());
             System.out.println("Status message: " + res.getStatusMessage());
+            System.out.println("Entity"+ res.getEntity(request.getReturnType()));
 
             reqIdContainer.remove();
             reqIdContainer.set(getRequestId(res));
